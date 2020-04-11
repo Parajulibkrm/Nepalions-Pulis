@@ -2,16 +2,16 @@ from fbchat import Client,log
 from fbchat.models import *
 import json,apiai
 
-thread_id = '1993487257353582'
+thread_id = 'group_id'
 # thread_type = ThreadType.GROUP
-email = '9814189969'
-password = 'Mamata'
+email = 'your email'
+password = 'password'
 
 #extending the class Client imported from fbchat
 class nepalionsBot(Client):
     #apiai method for setting up connection and getting the reply.
     def apiai(self):
-        self.ClientAccessToken = '068a53e649564f00937aac714f94fd9b'
+        self.ClientAccessToken = 'XXXXXXXXXXXXXX'
         self.ai = apiai.ApiAI(self.ClientAccessToken)
         self.request = self.ai.text_request()
         self.request.lang = 'en'
@@ -27,9 +27,9 @@ class nepalionsBot(Client):
         mero = str(message_object.mentions)
         mero = mero[10:24]
         print(mero)
-        if author_id =="100006301211439":
+        if author_id =="XXXXXXXXXX":
             client.reactToMessage(message_object.uid, MessageReaction.LOVE)
-        if mero == '100036591632945' or thread_type == ThreadType.USER:
+        if mero == 'XXXXXXXXXXXXXXX' or thread_type == ThreadType.USER:
             #marking the message as read
             self.markAsRead(author_id)
             #printing to terminal as a message is received.
